@@ -34,4 +34,12 @@ public class GenericResponse<T> {
                 .status(true)
                 .build();
     }
+
+    public static <T> GenericResponse<T> error(String errorType, String message) {
+        return GenericResponse.<T>builder()
+                .message(message)
+                .errorType(errorType)
+                .status(false)
+                .build();
+    }
 }

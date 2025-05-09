@@ -16,4 +16,6 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
 
     @Query(value = "SELECT * FROM users order by associate_id desc limit 1", nativeQuery = true)
     Optional<Users> findLatestAssociateId();
+
+    Optional<Users> findByEmail(String username);
 }
